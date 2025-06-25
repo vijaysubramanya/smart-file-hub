@@ -5,21 +5,15 @@ from django.db import migrations, models
 import django.db.models.deletion
 from django.contrib.auth import get_user_model
 
-def create_default_superuser(apps, schema_editor):
+def assign_files_to_user(apps, schema_editor):
     User = get_user_model()
-    # Create a default superuser if none exists
-    if not User.objects.filter(is_superuser=True).exists():
-        User.objects.create_superuser(
-            'admin',
-            'admin@example.com',
-            'admin123'
-        )
-    # Get the first superuser
-    superuser = User.objects.filter(is_superuser=True).first()
+    # Get the first available user (admin)
+    user = User.objects.filter(username='admin').first()
     
-    # Update all existing files to belong to the superuser
-    File = apps.get_model('filemanager', 'File')
-    File.objects.filter(owner__isnull=True).update(owner=superuser)
+    if user:
+        # Update all existing files to belong to the admin user
+        File = apps.get_model('filemanager', 'File')
+        File.objects.filter(owner__isnull=True).update(owner=user)
 
 class Migration(migrations.Migration):
 
@@ -40,8 +34,8 @@ class Migration(migrations.Migration):
                 to=settings.AUTH_USER_MODEL
             ),
         ),
-        # Run the function to create superuser and update existing files
-        migrations.RunPython(create_default_superuser),
+        # Run the function to assign existing files to admin user
+        migrations.RunPython(assign_files_to_user),
         # Make the owner field required
         migrations.AlterField(
             model_name='file',

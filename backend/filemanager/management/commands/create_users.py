@@ -12,7 +12,6 @@ class Command(BaseCommand):
             defaults={
                 'email': 'admin@example.com',
                 'is_staff': True,
-                'is_superuser': True,
                 'is_active': True
             }
         )
@@ -30,8 +29,7 @@ class Command(BaseCommand):
                 defaults={
                     'email': f'{username}@example.com',
                     'is_active': True,
-                    'is_staff': False,
-                    'is_superuser': False
+                    'is_staff': False
                 }
             )
             user.set_password('password123')

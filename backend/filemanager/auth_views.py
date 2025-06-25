@@ -54,8 +54,7 @@ def login_view(request):
             return Response({
                 'message': 'Login successful',
                 'user': {
-                    'username': user.username,
-                    'is_superuser': user.is_superuser
+                    'username': user.username
                 }
             })
         else:

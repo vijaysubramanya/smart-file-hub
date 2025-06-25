@@ -14,7 +14,7 @@ class Command(BaseCommand):
             # Print credentials
             self.stdout.write('\nSample User Credentials:')
             self.stdout.write('------------------------')
-            self.stdout.write('1. Superuser:')
+            self.stdout.write('1. Admin User:')
             self.stdout.write('   Username: admin')
             self.stdout.write('   Password: password123')
             self.stdout.write('\n2. Regular Users:')
