@@ -1,8 +1,8 @@
-# Abnormal File Vault
+# Smart File Hub
 
 A full-stack file management application built with React and Django, designed for efficient file handling and storage.
 
-## 🚀 Technology Stack
+## Technology Stack
 
 ### Backend
 - Django 4.x (Python web framework)
@@ -22,14 +22,14 @@ A full-stack file management application built with React and Django, designed f
 - Docker and Docker Compose
 - Local file storage with volume mounting
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have installed:
 - Docker (20.10.x or higher) and Docker Compose (2.x or higher)
 - Node.js (18.x or higher) - for local development
 - Python (3.9 or higher) - for local development
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Using Docker (Recommended)
 
@@ -85,12 +85,12 @@ docker-compose up --build
    npm start
    ```
 
-## 🌐 Accessing the Application
+## Accessing the Application
 
 - Frontend Application: http://localhost:3000
 - Backend API: http://localhost:8000/api
 
-## 📝 API Documentation
+## API Documentation
 
 ### File Management Endpoints
 
@@ -118,7 +118,7 @@ docker-compose up --build
 #### Download File
 - Access file directly through the file URL provided in metadata
 
-## 🗄️ Project Structure
+## Project Structure
 
 ```
 file-hub/
@@ -139,14 +139,7 @@ file-hub/
 └── docker-compose.yml    # Docker composition
 ```
 
-## 🔧 Development Features
-
-- Hot reloading for both frontend and backend
-- React Query DevTools for debugging data fetching
-- TypeScript for better development experience
-- Tailwind CSS for rapid UI development
-
-## 🐛 Troubleshooting
+## Troubleshooting
 
 1. **Port Conflicts**
    ```bash
@@ -166,61 +159,3 @@ file-hub/
    rm backend/data/db.sqlite3
    python manage.py migrate
    ```
-
-# Project Submission Instructions
-
-## Preparing Your Submission
-
-1. Before creating your submission zip file, ensure:
-   - All features are implemented and working as expected
-   - All tests are passing
-   - The application runs successfully locally
-   - Remove any unnecessary files or dependencies
-   - Clean up any debug/console logs
-
-2. Create the submission zip file:
-   ```bash
-   # Activate your backend virtual environment first
-   cd backend
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   
-   # Run the submission script from the project root
-   cd ..
-   python create_submission_zip.py
-   ```
-
-   The script will:
-   - Create a zip file named `username_YYYYMMDD.zip` (e.g., `johndoe_20240224.zip`)
-   - Respect .gitignore rules to exclude unnecessary files
-   - Preserve file timestamps
-   - Show you a list of included files and total size
-   - Warn you if the zip is unusually large
-
-3. Verify your submission zip file:
-   - Extract the zip file to a new directory
-   - Ensure all necessary files are included
-   - Verify that no unnecessary files (like node_modules, __pycache__, etc.) are included
-   - Test the application from the extracted files to ensure everything works
-
-## Video Documentation Requirement
-
-**Video Guidance** - Record a screen share demonstrating:
-- How you leveraged Gen AI to help build the features
-- Your prompting techniques and strategies
-- Any challenges you faced and how you overcame them
-- Your thought process in using AI effectively
-
-**IMPORTANT**: Please do not provide a demo of the application functionality. Focus only on your Gen AI usage and approach.
-
-## Submission Process
-
-1. Submit your project through this Google Form:
-   [Project Submission Form](https://forms.gle/nr6DZAX3nv6r7bru9)
-
-2. The form will require:
-   - Your project zip file (named `username_YYYYMMDD.zip`)
-   - Your video documentation
-   - Any additional notes or comments about your implementation
-
-Make sure to test the zip file and video before submitting to ensure they are complete and working as expected.
-
